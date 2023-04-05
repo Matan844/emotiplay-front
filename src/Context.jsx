@@ -23,7 +23,7 @@ export default function Context() {
             const filterd = JSON.parse(localStorage.getItem('filtered'))
             try {
                 try {
-                    const { data: videos } = await axios.get('http://localhost:8639/video/allVideos')
+                    const { data: videos } = await axios.get(`${process.env.REACT_APP_SERVER}/video/allVideos`)
                     if (filterd) {
                         setVideoSrc(filterd)
                     }
@@ -35,7 +35,7 @@ export default function Context() {
                 }
 
                 try {
-                    const { data: emotions } = await axios.get('http://localhost:8639/emotion/allEmotions');
+                    const { data: emotions } = await axios.get(`${process.env.REACT_APP_SERVER}/emotion/allEmotions`);
                     setEmotionList(emotions);
                 } catch (err) {
                     console.log("failed to fetch emotions : ", err.message)
