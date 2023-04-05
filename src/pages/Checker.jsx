@@ -35,12 +35,12 @@ export default function Checker() {
         console.log(FilterdVideos);
         const userId = localStorage.getItem("id");
         axios
-            .post("http://localhost:8639/user/watchedVideoSave", { userId: userId, videoId: videoId })
+            .post(`${process.env.REACT_APP_SERVER}/user/watchedVideoSave`, { userId: userId, videoId: videoId })
             .then(
-                axios.get('http://localhost:8639/video/allVideos')
+                axios.get(`${process.env.REACT_APP_SERVER}/video/allVideos`)
                     .then((res) => { videos = res.data })
                     .then(() => {
-                        axios.post('http://localhost:8639/user/getallviedvideos', { userId: userId })
+                        axios.post(`${process.env.REACT_APP_SERVER}/user/getallviedvideos`, { userId: userId })
                             .then((response) => {
                                 const viewdvideo = response.data.message;
                                 // console.log('viewed videos:', viewdvideo);
@@ -70,13 +70,13 @@ export default function Checker() {
     }
 
     const review = (body) => {
-        axios.put(`http://localhost:8639/rate/rateVideo/${videoSrc[counter]?._id}`, body)
+        axios.put(`${process.env.REACT_APP_SERVER}/rate/rateVideo/${videoSrc[counter]?._id}`, body)
             .then((response) => console.log(response))
             .catch((error) => console.log(error))
     }
 
     const inappropriate = () => {
-        axios.post(`http://localhost:8639/rate/rateVideo/${videoSrc[counter]?._id}`)
+        axios.post(`${process.env.REACT_APP_SERVER}/rate/rateVideo/${videoSrc[counter]?._id}`)
             .then((response) => console.log(response))
             .catch((error) => console.log(error))
     }

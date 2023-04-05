@@ -31,7 +31,7 @@ export default function Questioning(props) {
         let id = "";
         let correctAnswerVar, wrongAnswerVar, firstRandomVar, secondRandomVar;
         try {
-          const { data: videos } = await axios.get('http://localhost:8639/video/allVideos')
+          const { data: videos } = await axios.get(`${process.env.REACT_APP_SERVER}/video/allVideos`)
           if (pathname.split('/')[2] >= 0) {
             correctAnswerVar = videos[pathname.split('/')[2]].feeling.emotion;
             id = videos[pathname.split('/')[2]].feeling.spectrum;
@@ -42,7 +42,7 @@ export default function Questioning(props) {
         }
 
         try {
-          const { data: emotions } = await axios.get('http://localhost:8639/emotion/allEmotions');
+          const { data: emotions } = await axios.get(`${process.env.REACT_APP_SERVER}/emotion/allEmotions`);
           let tempArray = [];
           // Filter the emotions array to get the correct spectrum
           const spectrum = emotions.filter((emotion) => emotion._id === id);

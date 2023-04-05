@@ -20,7 +20,7 @@ export default function Updating(props) {
     const updateElement = () => {
         if (element === "spectrum") {
             if (spectrumId && newElement) {
-                axios.put(`http://localhost:8639/emotion/updateSpectrum/${spectrumId}`, {
+                axios.put(`${process.env.REACT_APP_SERVER}/emotion/updateSpectrum/${spectrumId}`, {
                     spectrum: newElement,
                     color: "grey"
                 })
@@ -36,7 +36,7 @@ export default function Updating(props) {
         } else if (element === "emotion") {
 
             if (spectrumId && emotionId && newElement) {
-                axios.put('http://localhost:8639/emotion/updateEmotion', {
+                axios.put(`${process.env.REACT_APP_SERVER}/emotion/updateEmotion`, {
                     spectrumId: spectrumId,
                     emotionId: emotionId,
                     emotion: newElement

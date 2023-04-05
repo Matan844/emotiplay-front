@@ -11,12 +11,12 @@ const Enter = () => {
     let videos = [{}]
 
     useEffect(() => {
-        axios.get('http://localhost:8639/video/allVideos')
+        axios.get(`${process.env.REACT_APP_SERVER}/video/allVideos`)
             .then((res) => { videos = res.data })
             .then(() => {
                 // console.log(videos);
                 const userid = localStorage.getItem('id');
-                axios.post('http://localhost:8639/user/getallviedvideos', { userId: userid })
+                axios.post(`${process.env.REACT_APP_SERVER}/user/getallviedvideos`, { userId: userid })
                     .then((response) => {
                         const viewdvideo = response.data.message;
                         // console.log('viewed videos:', viewdvideo);

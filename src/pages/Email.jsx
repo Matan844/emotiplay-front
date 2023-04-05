@@ -59,7 +59,7 @@ export default function ContactUs(props) {
       localStorage.setItem("email", email);
       localStorage.removeItem('id')
       const { data } = await axios.post(
-        "http://localhost:8639/user/createUser",
+        `${process.env.REACT_APP_SERVER}/user/createUser`,
         {
           email: email,
         }

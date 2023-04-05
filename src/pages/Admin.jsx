@@ -25,7 +25,7 @@ export default function Admin() {
 
   function updatestatus(videoId, status) {
     axios
-      .put(`http://localhost:8639/video/changeStatus/${videoId}`, {
+      .put(`${process.env.REACT_APP_SERVER}/video/changeStatus/${videoId}`, {
         status: status,
       })
       .then((res) => console.log(res))
@@ -45,7 +45,7 @@ export default function Admin() {
   }
 
   useEffect(() => {
-    axios.get('http://localhost:8639/video/allVideos')
+    axios.get(`${process.env.REACT_APP_SERVER}/video/allVideos`)
       .then(response => {
         const videos = response.data;
         setAllvideos(videos);

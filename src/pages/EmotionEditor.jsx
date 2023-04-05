@@ -33,7 +33,7 @@ export default function Statistics() {
             content: []
         }
         console.log(body, spectrumId);
-        axios.post(`http://localhost:8639/emotion/addEmotion/${spectrumId}`, body)
+        axios.post(`${process.env.REACT_APP_SERVER}/emotion/addEmotion/${spectrumId}`, body)
             .then(response => console.log(response))
             .catch(error => console.log(error))
         changeToInput(false)
@@ -41,7 +41,7 @@ export default function Statistics() {
 
     function deleteSpectrum(spectrumId) {
         console.log(typeof (spectrumId))
-        axios.delete(`http://localhost:8639/emotion/deleteSpectrum/${spectrumId}`)
+        axios.delete(`${process.env.REACT_APP_SERVER}/emotion/deleteSpectrum/${spectrumId}`)
             .then((res) => {
                 console.log(res);
                 alert("Spectrum deleted successfully")
@@ -56,7 +56,7 @@ export default function Statistics() {
     async function deleteEmotion(spectrum, emotion, title) {
         console.log(spectrum, emotion, title);
         try {
-            await axios.post('http://localhost:8639/emotion/deleteEmotion', {
+            await axios.post(`${process.env.REACT_APP_SERVER}/emotion/deleteEmotion`, {
                 spectrumId: spectrum,
                 emotionId: emotion,
                 emotionTitle: title

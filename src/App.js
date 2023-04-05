@@ -22,7 +22,7 @@ function App() {
   const [verifyId, setverifyId] = useState("")
 
   const verified = (email) => {
-    axios.post('http://localhost:8639/user/checkID', { email: email })
+    axios.post(`${process.env.REACT_APP_SERVER}/user/checkID`, { email: email })
       .then((response) => setverifyId(response.data.userId))
       .catch((error) => console.log(error))
   }

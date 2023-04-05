@@ -26,7 +26,7 @@ export default function Statistics() {
         }
       ]
     }
-    axios.post('http://localhost:8639/emotion/createSpectrum', body)
+    axios.post(`${process.env.REACT_APP_SERVER}/emotion/createSpectrum`, body)
       .then(response => {
         console.log(response);
         window.location.reload();
@@ -50,7 +50,7 @@ export default function Statistics() {
       content: []
     }
     console.log(body, spectrumId);
-    axios.post(`http://localhost:8639/emotion/addEmotion/${spectrumId}`, body)
+    axios.post(`${process.env.REACT_APP_SERVER}/emotion/addEmotion/${spectrumId}`, body)
       .then(response => console.log(response))
       .catch(error => console.log(error))
     changeToInput(false)
@@ -58,7 +58,7 @@ export default function Statistics() {
 
   function changeNeed(spectrumId, need, index) {
     axios
-      .post(`http://localhost:8639/emotion/changeNeed/${spectrumId}`, {
+      .post(`${process.env.REACT_APP_SERVER}/emotion/changeNeed/${spectrumId}`, {
         need: need,
         index: index
       })

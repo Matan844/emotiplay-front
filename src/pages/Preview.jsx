@@ -12,7 +12,7 @@ export default function Preview() {
 
   const back = () => {
     const publicId = localStorage.getItem('tryupload')
-    axios.post('http://localhost:8639/video/deletefromcloudinaryVideo', { publicId: publicId })
+    axios.post(`${process.env.REACT_APP_SERVER}/video/deletefromcloudinaryVideo`, { publicId: publicId })
     navigate("/donor");
     localStorage.removeItem("videoPreview");
   };
@@ -21,7 +21,7 @@ export default function Preview() {
     localStorage.removeItem("tryupload");
     const { spectrum, title, emotionId } = JSON.parse(data.emotion);
     axios
-      .post("http://localhost:8639/video/addVideo", {
+      .post(`${process.env.REACT_APP_SERVER}/video/addVideo`, {
         cloudinaryLink: videoLink,
         emotionId: emotionId,
         spectrum: spectrum,

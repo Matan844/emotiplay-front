@@ -9,6 +9,7 @@ const WidgetUpload = (props) => {
 
     const accept = props.accept
     const upload =process.env.REACT_APP_UPLOADPRESET
+    
 
     useEffect(() => { 
         cloudinaryRef.current = window.cloudinary;
