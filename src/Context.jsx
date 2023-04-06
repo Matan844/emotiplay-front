@@ -19,6 +19,7 @@ export default function Context() {
 
     useEffect(() => {
         //IIFE = immediately invoked function expression
+        console.log(process.env.REACT_APP_SERVER);
         (async () => {
             const filterd = JSON.parse(localStorage.getItem('filtered'))
             try {
@@ -37,6 +38,7 @@ export default function Context() {
                 try {
                     const { data: emotions } = await axios.get(`${process.env.REACT_APP_SERVER}/emotion/allEmotions`);
                     setEmotionList(emotions);
+
                 } catch (err) {
                     console.log("failed to fetch emotions : ", err.message)
                 }
