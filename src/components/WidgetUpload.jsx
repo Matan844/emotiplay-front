@@ -23,7 +23,7 @@ const WidgetUpload = (props) => {
             maxRawFileSize: 40000000, // 40 MB
             maxImageFileSize: 1000000, // 1 MB
             maxVideoDuration: 22, // 22 seconds
-            clientAllowedFormats: ['mp4', 'webm', "ogv"],
+            clientAllowedFormats: ['mp4', 'webm', "ogv","MOV"],
             showUploadMoreButton: false,
             singleUploadAutoClose: true,
             showInsecurePreview: true,
