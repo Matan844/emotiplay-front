@@ -66,7 +66,7 @@ export default function ContactUs(props) {
       );
       console.log(data._id)
       localStorage.setItem("id", data._id);
-      navigate('../enter');
+      navigate('./enter');
       window.location.reload();
     }
     else {
