@@ -83,6 +83,13 @@ export default function Navbar() {
                             CONTACT US
                         </NavLink>
                     </li>
+                    <li>
+                        <NavLink to={'../admin'}
+                        onClick={()=> setDropdown("hidden") } 
+                            className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:    ">
+                            ADMIN
+                        </NavLink>
+                    </li>
                 </ul>
             </div>
 

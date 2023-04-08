@@ -44,7 +44,7 @@ function App() {
         <Route path="/donor" element={verifyId === localStorage.getItem('id') ?<Donor /> : <Loading />}></Route>
         <Route path="/preview" element={verifyId === localStorage.getItem('id') ?<Preview />: <Loading /> }></Route>
         <Route path="/checker/:index" element={verifyId === localStorage.getItem('id') ?<Checker /> : <Loading />}></Route>
-        <Route path="/admin" element={verifyId === localStorage.getItem('id') ?<Admin />: <Loading /> }></Route>
+        <Route path="/admin" element={<Admin />}></Route>
         <Route path="/EmotionControl" element={verifyId === localStorage.getItem('id') ?<EmotionControl /> : <Loading />}></Route>
         <Route path="/EmotionEditor" element={verifyId === localStorage.getItem('id') ?<EmotionEditor /> : <Loading />}></Route>
         <Route path="/statistics" element={verifyId === localStorage.getItem('id') ?<Statistics /> : <Loading />}></Route>
