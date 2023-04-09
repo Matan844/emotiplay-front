@@ -31,6 +31,7 @@ export default function Checker() {
         // console.log(order);
         setFilterdVideos(prevFilterdVideos => prevFilterdVideos +1)
         navigate(`/checker/${counter + 1}`)
+        window.location.reload()
     }
     const saveWatchedVideo = (videoId) => {
         console.log(FilterdVideos);
