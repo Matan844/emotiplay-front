@@ -46,7 +46,7 @@ export default function Navbar() {
                 id="targetEl">
                 <ul className="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white  md: ">
                     <li>
-                        <NavLink to={'../enter'}
+                        <NavLink to={'./enter'}
                             onClick={() => setDropdown("hidden")}
                             className="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 " aria-current="page">
                             HOME
@@ -54,7 +54,7 @@ export default function Navbar() {
                     </li>
 
                     <li>
-                        <NavLink to={'../emotionlist'}
+                        <NavLink to={'./emotionlist'}
                             onClick={() => setDropdown("hidden")}
                             className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:    ">
                             STAR
@@ -62,7 +62,7 @@ export default function Navbar() {
                     </li>
 
                     <li>
-                        <NavLink to={'../checker/0'}
+                        <NavLink to={'./checker/0'}
                             onClick={() => setDropdown("hidden")}
                             className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:    ">
                             EVALUATOR
@@ -84,7 +84,7 @@ export default function Navbar() {
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to={'../admin'}
+                        <NavLink to={'./admin'}
                         onClick={()=> setDropdown("hidden") } 
                             className="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:p-0 md:    ">
                             ADMIN

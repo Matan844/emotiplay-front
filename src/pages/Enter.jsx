@@ -69,7 +69,7 @@ const Enter = () => {
 
                 <div className='place-self-center mb-1'>
                     <button className="bg-blue-600 p-3 hover:bg-blue-700 text-white font-bold px-5 rounded-full m-2 ">
-                        <NavLink to={'../checker/0'} className='caret-lime-900' >
+                        <NavLink to={'./checker/0'} className='caret-lime-900' >
                             EVALUATOR
                         </NavLink>
                     </button>
