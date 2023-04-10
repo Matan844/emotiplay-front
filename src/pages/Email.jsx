@@ -32,10 +32,10 @@ export default function ContactUs(props) {
       //   "N_38oe5UXxI5n1GKz"
       // )
       .send(
-        "service_2ovz1n8",
-        "template_n67tff8",
+         process.env.REACT_APP_SERVISE_ID ,
+          process.env.REACT_APP_TEMPLATE_ID, 
         templateParams,
-        "UWz26IM1ucSnroFSg"
+         process.env.REACT_APP_PUBLIC_KEY
       )
       .then(
         (result) => {
