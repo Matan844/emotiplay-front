@@ -35,6 +35,7 @@ export default function Admin() {
     if (pass === process.env.REACT_APP_ADMIN) {
       setlog(true)
       localStorage.setItem("adpas", process.env.REACT_APP_ADMIN)
+      window.location.reload()
     }
   }
   function ConfirmDelete(videoID,url) {
