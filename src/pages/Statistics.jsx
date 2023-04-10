@@ -5,7 +5,7 @@ export default function EmotionControl(params) {
   return (
     <div className="flex items-center justify-center w-screen">
       {" "}
-      {localStorage.getItem("adpas") === "0987" ? (
+      {localStorage.getItem("adpas") === process.env.REACT_APP_ADMIN? (
         <div className="text-center w-screen text-2xl">
           <AdminNavBar className="" />
           <div className="flex-col flex items-center justify-center ">

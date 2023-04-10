@@ -32,7 +32,7 @@ export default function Admin() {
       .catch((error) => console.log(error));
   }
   function checkpass(pass) {
-    if (pass === REACT_APP_ADMIN) {
+    if (pass === process.env.REACT_APP_ADMIN) {
       setlog(true)
       localStorage.setItem("adpas", "0987")
     }
@@ -58,7 +58,7 @@ export default function Admin() {
 
   return (
     <div className="w-full h-screen">
-      {localStorage.getItem('adpas') !== REACT_APP_ADMIN ?
+      {localStorage.getItem('adpas') !== process.env.REACT_APP_ADMIN ?
 
         (<div className="border border-gray-800 rounded-lg h-screen w-full flex items-center justify-evenly  ">
 
