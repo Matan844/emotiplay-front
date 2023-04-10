@@ -69,7 +69,7 @@ export default function Statistics() {
 
   return (
     <div >
-      {localStorage.getItem('adpas') === '0987' ? (
+      {localStorage.getItem('adpas') === REACT_APP_ADMIN ? (
         <div className="w-screen"> <AdminNavBar />
 
           <div className="flex w-full " style={{ "flexWrap": "wrap" }} >
