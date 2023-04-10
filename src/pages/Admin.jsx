@@ -34,7 +34,7 @@ export default function Admin() {
   function checkpass(pass) {
     if (pass === process.env.REACT_APP_ADMIN) {
       setlog(true)
-      localStorage.setItem("adpas", "0987")
+      localStorage.setItem("adpas", process.env.REACT_APP_ADMIN)
     }
   }
   function ConfirmDelete(videoID,url) {
