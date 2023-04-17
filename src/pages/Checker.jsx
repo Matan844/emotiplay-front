@@ -87,7 +87,7 @@ export default function Checker() {
 
     return (
         <div className='w-scren h-screen grid grid-cols-1 place-items-center'>
-            <div className='w-6/12 p-3'>
+            <div className='w-8/12 p-3'>
                 {videoSrc[counter]?.cloudinaryLink ? (
                     <div>
                         <VideoPlayer counter={counter} setCounter={setCounter} />
